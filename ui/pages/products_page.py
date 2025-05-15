@@ -22,4 +22,4 @@ class ProductPage:
 
     def get_cart_badge_count(self, timeout=2):
         WebDriverWait(self.driver, timeout).until(EC.visibility_of_element_located(self.cart_badge))
-        return self.driver.find_element(*self.cart_badge).text
+        return int(self.driver.find_element(*self.cart_badge).text)
